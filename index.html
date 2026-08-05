@@ -1,30 +1,12 @@
-function buscarClima() {
-    const cidadeInput = document.getElementById('cidadeInput').value;
-    const resultadoDiv = document.getElementById('resultado');
-
-    if (cidadeInput.trim() === "") {
-        resultadoDiv.innerHTML = "<p style='color: red;'>cafelândia</p>";
-        return;
-    }
-
-    // Se o usuário digitar Cafelândia, mostra os dados reais/atualizados
-    if (cidadeInput.toLowerCase().includes("cafelândia") || cidadeInput.toLowerCase().includes("cafelandia")) {
-        resultadoDiv.innerHTML = `
+<p style='color: red;'>cafelândia</p>";
             <hr>
             <h3>Cafelândia - PR</h3>
             <p><strong>Status:</strong> 🌧️ Nublado com pancadas de chuva</p>
             <p><strong>Temperatura:</strong> 16°C</p>
             <p><strong>Mínima / Máxima:</strong> 15°C / 22°C</p>
             <p><strong>Umidade:</strong> 88%</p>
-        `;
-    } else {
-        // Resposta padrão para outras cidades (Simulação)
-        resultadoDiv.innerHTML = `
             <hr>
             <h3>${cidadeInput}</h3>
             <p><strong>Status:</strong> 🌤️ Parcialmente nublado</p>
             <p><strong>Temperatura:</strong> 22°C</p>
             <p><strong>Mínima / Máxima:</strong> 18°C / 26°C</p>
-        `;
-    }
-}
