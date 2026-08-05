@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport"
-         content="width=device-width, initial-scale=1.0">
-         <title>Blog</title>
-    </head>
-    <boilly>
-          <header>
-              <h1>Meu blog tech</h1>
-              <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
-            </header>
-            <main>
-                <h2>Meu primeiro post</h2>
-                <p>Por: Marcelo Paludetto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou
+function buscarClima() {
+    const cidadeInput = document.getElementById('cidadeInput').value;
+    const resultadoDiv = document.getElementById('resultado');
+
+    if (cidadeInput.trim() === "") {
+        resultadoDiv.innerHTML = "<p style='color: red;'>Por favor, digite o nome de uma cidade!</p>";
+        return;
+    }
+
+    // Se o usuário digitar Cafelândia, mostra os dados reais/atualizados
+    if (cidadeInput.toLowerCase().includes("cafelândia") || cidadeInput.toLowerCase().includes("cafelandia")) {
+        resultadoDiv.innerHTML = `
+            <hr>
+            <h3>Cafelândia - PR</h3>
+            <p><strong>Status:</strong> 🌧️ Nublado com pancadas de chuva</p>
+            <p><strong>Temperatura:</strong> 16°C</p>
+            <p><strong>Mínima / Máxima:</strong> 15°C / 22°C</p>
+            <p><strong>Umidade:</strong> 88%</p>
+        `;
+    } else {
+        // Resposta padrão para outras cidades (Simulação)
+        resultadoDiv.innerHTML = `
+            <hr>
+            <h3>${cidadeInput}</h3>
+            <p><strong>Status:</strong> 🌤️ Parcialmente nublado</p>
+            <p><strong>Temperatura:</strong> 22°C</p>
+            <p><strong>Mínima / Máxima:</strong> 18°C / 26°C</p>
+        `;
+    }
+}
